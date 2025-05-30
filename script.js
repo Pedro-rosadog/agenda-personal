@@ -20,9 +20,9 @@ function renderTasks() {
   tasks
     .filter(task => {
       const matchesSearch = task.title.toLowerCase().includes(query);
-      const matchesFilter = 
-        filter === "all" || 
-        (filter === "completed" && task.completed) || 
+      const matchesFilter =
+        filter === "all" ||
+        (filter === "completed" && task.completed) ||
         (filter === "pending" && !task.completed);
       return matchesSearch && matchesFilter;
     })
@@ -34,9 +34,9 @@ function renderTasks() {
         <p>${task.description}</p>
         <small>Vence: ${task.dueDate}</small>
         <div class="actions">
-          <button onclick="toggleComplete(${index})">✔</button>
-          <button onclick="editTask(${index})">✏️</button>
-          <button onclick="deleteTask(${index})">🗑️</button>
+          <button aria-label="Completar" onclick="toggleComplete(${index})">✔</button>
+          <button aria-label="Editar" onclick="editTask(${index})">✏️</button>
+          <button aria-label="Eliminar" onclick="deleteTask(${index})">🗑️</button>
         </div>
       `;
       taskList.appendChild(taskDiv);
@@ -85,14 +85,12 @@ function editTask(index) {
   renderTasks();
 }
 
-// Tema claro/oscuro
 function toggleTheme() {
   document.body.classList.toggle("dark");
   darkMode = !darkMode;
   localStorage.setItem("darkMode", JSON.stringify(darkMode));
 }
 
-// Eventos
 themeBtn.addEventListener("click", toggleTheme);
 searchInput.addEventListener("input", renderTasks);
 filterSelect.addEventListener("change", renderTasks);
