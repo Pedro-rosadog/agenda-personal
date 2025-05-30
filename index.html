@@ -2,19 +2,35 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agenda Interactiva</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agenda Personal</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
-    <h1>Agenda Personal</h1>
+    <h1>🗓️ Agenda Personal</h1>
+
+    <div class="top-controls">
+      <button id="toggle-theme">🌙 Tema</button>
+      <input type="text" id="search" placeholder="Buscar tarea..." />
+      <select id="filter">
+        <option value="all">Todas</option>
+        <option value="completed">Completadas</option>
+        <option value="pending">Pendientes</option>
+      </select>
+    </div>
+
     <form id="task-form">
-      <input type="text" id="task-input" placeholder="Escribe una tarea" required />
-      <button type="submit">Agregar</button>
+      <input type="text" id="title" placeholder="Título de la tarea" required />
+      <textarea id="description" placeholder="Descripción" required></textarea>
+      <input type="date" id="due-date" required />
+      <button type="submit">Agregar tarea</button>
     </form>
-    <ul id="task-list"></ul>
+
+    <div id="task-list"></div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
