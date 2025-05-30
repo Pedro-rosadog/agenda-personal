@@ -2,35 +2,17 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Agenda Personal</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>🗓️ Agenda Personal</h1>
-
-    <div class="top-controls">
-      <button id="toggle-theme">🌙 Tema</button>
-      <input type="text" id="search" placeholder="Buscar tarea..." />
-      <select id="filter">
-        <option value="all">Todas</option>
-        <option value="completed">Completadas</option>
-        <option value="pending">Pendientes</option>
-      </select>
-    </div>
-
-    <form id="task-form">
-      <input type="text" id="title" placeholder="Título de la tarea" required />
-      <textarea id="description" placeholder="Descripción" required></textarea>
-      <input type="date" id="due-date" required />
-      <button type="submit">Agregar tarea</button>
-    </form>
-
-    <div id="task-list"></div>
+    <h1>Agenda Personal</h1>
+    <input id="nueva-tarea" placeholder="Escribe una tarea..." />
+    <button onclick="agregarTarea()">Agregar</button>
+    <ul id="lista-tareas"></ul>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
