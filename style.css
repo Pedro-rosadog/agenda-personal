@@ -1,55 +1,71 @@
-/* Estilo general del cuerpo */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', sans-serif;
   background: linear-gradient(to right, #f1f4f9, #dff1ff);
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
 }
 
-/* Contenedor principal */
+body.dark {
+  background: #121212;
+  color: #f1f1f1;
+}
+
+body.dark .container {
+  background-color: #1e1e1e;
+}
+
+body.dark input,
+body.dark textarea,
+body.dark select {
+  background-color: #2c2c2c;
+  color: white;
+  border-color: #555;
+}
+
 .container {
   background-color: white;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 450px;
+  max-width: 500px;
+  transition: background 0.3s;
 }
 
-/* Título */
 h1 {
   text-align: center;
   margin-bottom: 25px;
-  color: #333;
+  color: inherit;
 }
 
-/* Formulario */
-.form {
+.top-controls {
   display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
   gap: 10px;
   margin-bottom: 20px;
 }
 
-#nueva-tarea {
-  flex: 1;
-  padding: 10px 12px;
+input, textarea, select {
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 16px;
-  outline: none;
-  transition: border-color 0.2s;
-}
-
-#nueva-tarea:focus {
-  border-color: #007bff;
 }
 
 button {
-  padding: 10px 15px;
+  padding: 10px;
   background-color: #007bff;
   color: white;
   border: none;
@@ -62,51 +78,42 @@ button:hover {
   background-color: #0056b3;
 }
 
-/* Lista de tareas */
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-li {
+.task {
   background-color: #f7f9fc;
   padding: 12px 16px;
   border-radius: 6px;
   margin-bottom: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 16px;
   transition: background 0.2s;
 }
 
-li:hover {
-  background: #eef2f7;
+body.dark .task {
+  background-color: #2a2a2a;
 }
 
-li button {
-  background-color: #dc3545;
-  border: none;
-  color: white;
-  padding: 6px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.2s;
+.task.completed {
+  text-decoration: line-through;
+  opacity: 0.7;
 }
 
-li button:hover {
-  background-color: #b02a37;
+.task h3 {
+  margin: 0 0 5px;
 }
 
-/* Responsivo */
+.actions {
+  margin-top: 10px;
+}
+
+.actions button {
+  margin-right: 5px;
+  background-color: #6c757d;
+}
+
+.actions button:hover {
+  background-color: #495057;
+}
+
 @media (max-width: 500px) {
-  .form {
+  .top-controls {
     flex-direction: column;
-  }
-
-  button {
-    width: 100%;
   }
 }
