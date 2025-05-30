@@ -1,121 +1,70 @@
-:root {
-  --bg-color: #f9f9f9;
-  --text-color: #222;
-  --card-color: #ffffff;
-  --completed-color: #d4edda;
-  --accent-color: #007BFF;
-}
-
-body.dark {
-  --bg-color: #121212;
-  --text-color: #f9f9f9;
-  --card-color: #1e1e1e;
-  --completed-color: #305b3f;
-  --accent-color: #4da3ff;
-}
-
-* {
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
-}
-
 body {
-  background: var(--bg-color);
-  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
   margin: 0;
-  padding: 20px;
-  transition: background 0.3s, color 0.3s;
+  padding: 0;
 }
 
 .container {
-  max-width: 700px;
-  margin: auto;
-  background: var(--card-color);
+  max-width: 500px;
+  margin: 50px auto;
+  background: white;
   padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
   text-align: center;
+  color: #333;
 }
 
-.top-controls {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
-  flex-wrap: wrap;
-}
-
-.top-controls input,
-.top-controls select,
-.top-controls button {
-  padding: 8px;
-  font-size: 1em;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-input, textarea, button {
+#nueva-tarea {
+  width: 70%;
   padding: 10px;
-  font-size: 1em;
-  border-radius: 6px;
+  margin-right: 10px;
   border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 button {
-  background: var(--accent-color);
-  color: white;
+  padding: 10px 15px;
+  background-color: #4CAF50;
   border: none;
+  color: white;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background 0.3s;
 }
 
 button:hover {
-  background: #0056b3;
+  background-color: #45a049;
 }
 
-.task {
-  background: var(--card-color);
-  padding: 12px;
-  border-radius: 6px;
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  background: #eee;
   margin-bottom: 10px;
-  border-left: 5px solid var(--accent-color);
-  position: relative;
-  transition: transform 0.3s ease;
+  padding: 10px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.task.completed {
-  background: var(--completed-color);
-  text-decoration: line-through;
-}
-
-.task .actions {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
-.actions button {
-  margin-left: 5px;
-  background: transparent;
+li button {
+  background-color: #ff4d4d;
+  padding: 5px 10px;
+  border-radius: 4px;
   border: none;
   cursor: pointer;
-  font-size: 1.2em;
+  color: white;
 }
 
-@media (max-width: 600px) {
-  .container {
-    margin: 10px;
-  }
-  .top-controls {
-    flex-direction: column;
-  }
+li button:hover {
+  background-color: #e60000;
 }
